@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Contact - FreeUnApp Bootstrap Template</title>
+    <title>Services - FreeUnApp Bootstrap Template</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -47,7 +47,7 @@
   ======================================================== -->
   </head>
 
-  <body class="contact-page">
+  <body class="Services-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
       <div
         class="container-fluid container-xl position-relative d-flex align-items-center"
@@ -64,7 +64,7 @@
               <a href="index.html">Home<br /></a>
             </li>
             <li><a href="about.html">About</a></li>
-            <li><a href="Services.html">Services</a></li>
+            <li><a href="Services.html" class="active">Services</a></li>
             <li><a href="trainers.html">Trainers</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="pricing.html">Pricing</a></li>
@@ -93,7 +93,7 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -109,7 +109,7 @@
           <div class="container">
             <div class="row d-flex justify-content-center text-center">
               <div class="col-lg-8">
-                <h1>Contact</h1>
+                <h1>Services</h1>
                 <p class="mb-0">
                   Odio et unde deleniti. Deserunt numquam exercitationem.
                   Officiis quo odio sint voluptas consequatur ut a odio
@@ -124,136 +124,160 @@
           <div class="container">
             <ol>
               <li><a href="index.html">Home</a></li>
-              <li class="current">Contact</li>
+              <li class="current">Services</li>
             </ol>
           </div>
         </nav>
       </div>
       <!-- End Page Title -->
 
-      <!-- Contact Section -->
-      <section id="contact" class="contact section">
-        <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
-          <iframe
-            style="border: 0; width: 100%; height: 300px"
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-            frameborder="0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <!-- End Google Maps -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row gy-4">
-            <div class="col-lg-4">
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <i class="bi bi-geo-alt flex-shrink-0"></i>
-                <div>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <i class="bi bi-telephone flex-shrink-0"></i>
-                <div>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-
-              <div
-                class="info-item d-flex"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <i class="bi bi-envelope flex-shrink-0"></i>
-                <div>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div>
-              <!-- End Info Item -->
-            </div>
-
-            <div class="col-lg-8">
-              <form
-                action="forms/contact.php"
-                method="post"
-                class="php-email-form"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="row gy-4">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      placeholder="Your Name"
-                      required=""
-                    />
+      <!-- Services Section -->
+      <section id="Services" class="Services section">
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="course-item">
+                <img
+                  src="assets/img/course-1.jpg"
+                  class="img-fluid"
+                  alt="..."
+                />
+                <div class="course-content">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <p class="category">Web Development</p>
+                    <p class="price">$169</p>
                   </div>
 
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      placeholder="Your Email"
-                      required=""
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="subject"
-                      placeholder="Subject"
-                      required=""
-                    />
-                  </div>
-
-                  <div class="col-md-12">
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      rows="6"
-                      placeholder="Message"
-                      required=""
-                    ></textarea>
-                  </div>
-
-                  <div class="col-md-12 text-center">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">
-                      Your message has been sent. Thank you!
+                  <h3><a href="course-details.html">Website Design</a></h3>
+                  <p class="description">
+                    Et architecto provident deleniti facere repellat nobis iste.
+                    Id facere quia quae dolores dolorem tempore.
+                  </p>
+                  <div
+                    class="trainer d-flex justify-content-between align-items-center"
+                  >
+                    <div class="trainer-profile d-flex align-items-center">
+                      <img
+                        src="assets/img/trainers/trainer-1-2.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <a href="" class="trainer-link">Antonio</a>
                     </div>
-
-                    <button type="submit">Send Message</button>
+                    <div class="trainer-rank d-flex align-items-center">
+                      <i class="bi bi-person user-icon"></i>&nbsp;50
+                      &nbsp;&nbsp;
+                      <i class="bi bi-heart heart-icon"></i>&nbsp;65
+                    </div>
                   </div>
                 </div>
-              </form>
+              </div>
             </div>
-            <!-- End Contact Form -->
+            <!-- End Course Item-->
+
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="course-item">
+                <img
+                  src="assets/img/course-2.jpg"
+                  class="img-fluid"
+                  alt="..."
+                />
+                <div class="course-content">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <p class="category">Marketing</p>
+                    <p class="price">$250</p>
+                  </div>
+
+                  <h3>
+                    <a href="course-details.html">Search Engine Optimization</a>
+                  </h3>
+                  <p class="description">
+                    Et architecto provident deleniti facere repellat nobis iste.
+                    Id facere quia quae dolores dolorem tempore.
+                  </p>
+                  <div
+                    class="trainer d-flex justify-content-between align-items-center"
+                  >
+                    <div class="trainer-profile d-flex align-items-center">
+                      <img
+                        src="assets/img/trainers/trainer-2-2.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <a href="" class="trainer-link">Lana</a>
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                      <i class="bi bi-person user-icon"></i>&nbsp;35
+                      &nbsp;&nbsp;
+                      <i class="bi bi-heart heart-icon"></i>&nbsp;42
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Course Item-->
+
+            <div
+              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="course-item">
+                <img
+                  src="assets/img/course-3.jpg"
+                  class="img-fluid"
+                  alt="..."
+                />
+                <div class="course-content">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <p class="category">Content</p>
+                    <p class="price">$180</p>
+                  </div>
+
+                  <h3><a href="course-details.html">Copywriting</a></h3>
+                  <p class="description">
+                    Et architecto provident deleniti facere repellat nobis iste.
+                    Id facere quia quae dolores dolorem tempore.
+                  </p>
+                  <div
+                    class="trainer d-flex justify-content-between align-items-center"
+                  >
+                    <div class="trainer-profile d-flex align-items-center">
+                      <img
+                        src="assets/img/trainers/trainer-3-2.jpg"
+                        class="img-fluid"
+                        alt=""
+                      />
+                      <a href="" class="trainer-link">Brandon</a>
+                    </div>
+                    <div class="trainer-rank d-flex align-items-center">
+                      <i class="bi bi-person user-icon"></i>&nbsp;20
+                      &nbsp;&nbsp;
+                      <i class="bi bi-heart heart-icon"></i>&nbsp;85
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Course Item-->
           </div>
         </div>
       </section>
-      <!-- /Contact Section -->
+      <!-- /Services Section -->
     </main>
 
     <footer id="footer" class="footer position-relative light-background">

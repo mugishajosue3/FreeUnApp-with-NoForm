@@ -12,13 +12,15 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Poppins",  sans-serif;
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Poppins", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #37423b; /* Color for headings, subheadings and title throughout the website */
@@ -29,7 +31,7 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #272828;  /* The default color of the main navmenu links */
+  --nav-color: #272828; /* The default color of the main navmenu links */
   --nav-hover-color: #023f8a; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -144,7 +146,10 @@ h6 {
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(
+    var(--accent-color) 50%,
+    color-mix(in srgb, var(--accent-color), transparent 75%) 52%
+  );
   border-radius: 50%;
   display: block;
   position: relative;
@@ -332,7 +337,7 @@ h6 {
     padding-right: 0;
   }
 
-  .navmenu li:hover>a,
+  .navmenu li:hover > a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -371,11 +376,11 @@ h6 {
 
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
+  .navmenu .dropdown ul li:hover > a {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover > ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -387,7 +392,7 @@ h6 {
     visibility: hidden;
   }
 
-  .navmenu .dropdown .dropdown:hover>ul {
+  .navmenu .dropdown .dropdown:hover > ul {
     opacity: 1;
     top: 0;
     left: -100%;
@@ -489,7 +494,7 @@ h6 {
     background-color: rgba(33, 37, 41, 0.1);
   }
 
-  .navmenu .dropdown>.dropdown-active {
+  .navmenu .dropdown > .dropdown-active {
     display: block;
     background-color: rgba(33, 37, 41, 0.03);
   }
@@ -516,7 +521,7 @@ h6 {
     transition: 0.3s;
   }
 
-  .mobile-nav-active .navmenu>ul {
+  .mobile-nav-active .navmenu > ul {
     display: block;
   }
 }
@@ -640,7 +645,7 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email] {
+.footer .footer-newsletter .newsletter-form input[type="email"] {
   border: 0;
   padding: 4px 8px;
   width: 100%;
@@ -648,11 +653,11 @@ h6 {
   color: var(--default-color);
 }
 
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+.footer .footer-newsletter .newsletter-form input[type="email"]:focus-visible {
   outline: none;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit] {
+.footer .footer-newsletter .newsletter-form input[type="submit"] {
   border: 0;
   font-size: 16px;
   padding: 0 20px 2px 20px;
@@ -663,7 +668,7 @@ h6 {
   border-radius: 50px;
 }
 
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+.footer .footer-newsletter .newsletter-form input[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -774,7 +779,8 @@ h6 {
 
 .page-title .heading {
   padding: 80px 0;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .page-title .heading h1 {
@@ -800,11 +806,11 @@ h6 {
   font-weight: 600;
 }
 
-.page-title nav ol li+li {
+.page-title nav ol li + li {
   padding-left: 10px;
 }
 
-.page-title nav ol li+li::before {
+.page-title nav ol li + li::before {
   content: "/";
   display: inline-block;
   padding-right: 10px;
@@ -824,7 +830,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -1154,33 +1159,33 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Courses Section
+# Services Section
 --------------------------------------------------------------*/
-.courses .course-item {
+.Services .course-item {
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
   border-radius: 5px;
 }
 
-.courses .course-content {
+.Services .course-content {
   padding: 15px;
 }
 
-.courses .course-content h3 {
+.Services .course-content h3 {
   font-weight: 700;
   font-size: 20px;
 }
 
-.courses .course-content h3 a {
+.Services .course-content h3 a {
   color: var(--heading-color);
   transition: 0.3s;
 }
 
-.courses .course-content h3 a:hover {
+.Services .course-content h3 a:hover {
   color: var(--accent-color);
 }
 
-.courses .course-content .category {
+.Services .course-content .category {
   background: var(--accent-color);
   color: var(--contrast-color);
   font-size: 14px;
@@ -1189,29 +1194,30 @@ section,
   border-radius: 5px;
 }
 
-.courses .course-content .price {
+.Services .course-content .price {
   margin: 0;
   font-weight: 700;
   font-size: 18px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
-.courses .course-content .description {
+.Services .course-content .description {
   font-size: 14px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
 
-.courses .trainer {
+.Services .trainer {
   padding-top: 15px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-top: 1px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
-.courses .trainer .trainer-profile img {
+.Services .trainer .trainer-profile img {
   max-width: 50px;
   border-radius: 50px;
 }
 
-.courses .trainer .trainer-profile .trainer-link {
+.Services .trainer .trainer-profile .trainer-link {
   padding-left: 10px;
   font-weight: 600;
   font-size: 16px;
@@ -1219,22 +1225,23 @@ section,
   transition: 0.3s;
 }
 
-.courses .trainer .trainer-profile .trainer-link:hover {
+.Services .trainer .trainer-profile .trainer-link:hover {
   color: var(--accent-color);
 }
 
-.courses .trainer .trainer-rank {
+.Services .trainer .trainer-rank {
   font-size: 18px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
 }
 
-.courses .trainer .trainer-rank .user-icon {
+.Services .trainer .trainer-rank .user-icon {
   font-size: 22px;
 }
 
 /*--------------------------------------------------------------
-# Trainers Index Section
+# Terms of services
 --------------------------------------------------------------*/
+
 .trainers-index .member {
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -1435,13 +1442,13 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Courses Course Details Section
+# Services Course Details Section
 --------------------------------------------------------------*/
-.courses-course-details {
+.Services-course-details {
   padding-bottom: 20px;
 }
 
-.courses-course-details h3 {
+.Services-course-details h3 {
   font-size: 24px;
   margin: 30px 0 15px 0;
   font-weight: 700;
@@ -1449,7 +1456,7 @@ section,
   padding-bottom: 10px;
 }
 
-.courses-course-details h3:before {
+.Services-course-details h3:before {
   content: "";
   position: absolute;
   display: block;
@@ -1460,7 +1467,7 @@ section,
   left: 0;
 }
 
-.courses-course-details h3:after {
+.Services-course-details h3:after {
   content: "";
   position: absolute;
   display: block;
@@ -1471,25 +1478,25 @@ section,
   left: 0;
 }
 
-.courses-course-details .course-info {
+.Services-course-details .course-info {
   background: color-mix(in srgb, var(--default-color), transparent 95%);
   padding: 10px 15px;
   margin-bottom: 15px;
 }
 
-.courses-course-details .course-info h5 {
+.Services-course-details .course-info h5 {
   font-weight: 400;
   font-size: 16px;
   margin: 0;
   font-family: var(--nav-font);
 }
 
-.courses-course-details .course-info p {
+.Services-course-details .course-info p {
   margin: 0;
   font-weight: 600;
 }
 
-.courses-course-details .course-info a {
+.Services-course-details .course-info a {
   color: var(--accent-color);
 }
 
@@ -1511,7 +1518,8 @@ section,
   transition: 0.3s;
   color: var(--default-color);
   border-radius: 0;
-  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  border-right: 2px solid
+    color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 600;
   font-size: 15px;
 }
@@ -1810,7 +1818,7 @@ section,
   padding-bottom: 40px;
 }
 
-.contact .info-item+.info-item {
+.contact .info-item + .info-item {
   margin-top: 40px;
 }
 
@@ -1845,31 +1853,35 @@ section,
   height: 100%;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"],
 .contact .php-email-form textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
   border-radius: 0;
   color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form input[type="text"]:focus,
+.contact .php-email-form input[type="email"]:focus,
 .contact .php-email-form textarea:focus {
   border-color: var(--accent-color);
 }
 
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form input[type="text"]::placeholder,
+.contact .php-email-form input[type="email"]::placeholder,
 .contact .php-email-form textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -1878,7 +1890,7 @@ section,
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
@@ -1887,4 +1899,224 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# Scroll Offset for Anchor Links
+--------------------------------------------------------------*/
+
+/* Add scroll offset for anchor links to account for sticky header */
+html {
+  scroll-padding-top: 100px; /* Adjust this value based on your header height */
+}
+
+/* Alternative method for older browsers */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Specific offset for terms and privacy sections */
+#terms,
+#privacy {
+  scroll-margin-top: 120px;
+}
+
+/*--------------------------------------------------------------
+# Terms of Service & Privacy Policy Sections
+--------------------------------------------------------------*/
+
+.terms-service,
+.privacy-policy {
+  padding: 80px 0;
+}
+
+.terms-service .terms-content,
+.privacy-policy .privacy-content {
+  background: var(--surface-color);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.terms-section,
+.privacy-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 30px;
+}
+
+.terms-section:last-child,
+.privacy-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.terms-section h4,
+.privacy-section h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+}
+
+.terms-section h4 i,
+.privacy-section h4 i {
+  font-size: 1.1rem;
+  margin-right: 10px;
+  color: var(--accent-color);
+}
+
+.terms-list,
+.privacy-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.terms-list li,
+.privacy-list li {
+  position: relative;
+  padding: 8px 0 8px 25px;
+  line-height: 1.6;
+  color: var(--default-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.terms-list li:last-child,
+.privacy-list li:last-child {
+  border-bottom: none;
+}
+
+.terms-list li:before,
+.privacy-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--accent-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.terms-list li strong,
+.privacy-list li strong {
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.contact-info {
+  background: rgba(2, 63, 138, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+  color: var(--default-color);
+}
+
+.contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.alert {
+  border-radius: 10px;
+  border: none;
+  padding: 15px 20px;
+  margin-top: 20px;
+}
+
+.alert-info {
+  background: rgba(13, 202, 240, 0.1);
+  color: #055160;
+  border-left: 4px solid #0dcaf0;
+}
+
+.alert-success {
+  background: rgba(25, 135, 84, 0.1);
+  color: #0f5132;
+  border-left: 4px solid #198754;
+}
+
+.alert i {
+  font-size: 1.1rem;
+}
+
+/* Hover effects for better engagement */
+.terms-section:hover,
+.privacy-section:hover {
+  background: rgba(2, 63, 138, 0.02);
+  border-radius: 8px;
+  padding: 15px;
+  margin: -15px;
+  transition: all 0.3s ease;
+}
+
+.terms-list li:hover,
+.privacy-list li:hover {
+  background: rgba(2, 63, 138, 0.03);
+  border-radius: 5px;
+  padding-left: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .terms-service .terms-content,
+  .privacy-policy .privacy-content {
+    padding: 25px 20px;
+  }
+
+  .terms-section h4,
+  .privacy-section h4 {
+    font-size: 1.1rem;
+  }
+
+  .contact-info {
+    padding: 15px;
+  }
+}
+
+/* Animation for section titles */
+.terms-service .section-title h2,
+.privacy-policy .section-title h2 {
+  position: relative;
+  display: inline-block;
+  padding: 4px;
+}
+
+.terms-service .section-title h2:after,
+.privacy-policy .section-title h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+/* Enhanced styling for critical information */
+.terms-section h4:has(i.bi-exclamation-triangle),
+.privacy-section h4:has(i.bi-shield-lock) {
+  color: #dc3545;
+}
+
+.terms-section h4:has(i.bi-exclamation-triangle) i,
+.privacy-section h4:has(i.bi-shield-lock) i {
+  color: #dc3545;
+}
+
+/* Success indicators */
+.terms-list li:has(strong),
+.privacy-list li:has(strong) {
+  background: rgba(25, 135, 84, 0.02);
+  border-radius: 5px;
+  padding: 10px 0 10px 25px;
+  margin: 5px 0;
 }
