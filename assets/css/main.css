@@ -1708,6 +1708,9 @@ section,
   overflow: hidden;
 }
 
+.pricing-item h3 {
+  padding-top: 40px !important;
+}
 .pricing .pricing-item h3 {
   margin: -20px -20px 20px -20px;
   padding: 20px 15px;
@@ -2382,6 +2385,219 @@ section[id] {
   }
 
   .service-card-features li {
+    font-size: 0.9rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Enhanced Pricing Section Styles
+--------------------------------------------------------------*/
+
+/* Onboarding Card Special Styling */
+.onboarding-card {
+  position: relative;
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border: 2px solid #ffc107;
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.15);
+  transform: scale(1.02);
+  z-index: 2;
+}
+
+.onboarding-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ffc107, #ff8c00, #ffc107);
+  border-radius: 15px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.onboarding-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #ffc107, #ff8c00);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+  z-index: 3;
+}
+
+.onboarding-badge i {
+  font-size: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.onboarding-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Admission Card Special Styling */
+.admission-card {
+  background: linear-gradient(145deg, #e8f5e8, #d4edda);
+  border: 2px solid #28a745;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.15);
+}
+
+.admission-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(45deg, #28a745, #20c997);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+  z-index: 3;
+}
+
+.admission-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Success Description Styling */
+.success-description {
+  font-size: 0.95rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Enhanced Pricing Item Styling */
+.pricing-item {
+  position: relative;
+  padding-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.pricing-item:hover {
+  transform: translateY(-5px);
+}
+
+.pricing-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.pricing-item ul li {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.pricing-item ul li i {
+  color: #28a745;
+  font-size: 1.1rem;
+  min-width: 20px;
+}
+
+.pricing-item ul li.na {
+  color: #adb5bd;
+}
+
+.pricing-item ul li.na i {
+  color: #adb5bd;
+}
+
+/* Enhanced Button Styling */
+.pricing-item .btn-buy {
+  background: linear-gradient(45deg, var(--accent-color), #0056b3);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-item .btn-buy:hover {
+  background: linear-gradient(45deg, #0056b3, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 63, 138, 0.3);
+  color: #fff;
+}
+
+.onboarding-card .btn-buy {
+  background: linear-gradient(45deg, #ffc107, #ff8c00);
+}
+
+.onboarding-card .btn-buy:hover {
+  background: linear-gradient(45deg, #ff8c00, #ffc107);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.4);
+}
+
+.admission-card .btn-buy {
+  background: linear-gradient(45deg, #28a745, #20c997);
+}
+
+.admission-card .btn-buy:hover {
+  background: linear-gradient(45deg, #20c997, #28a745);
+  box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .onboarding-card,
+  .admission-card {
+    transform: none;
+  }
+
+  .onboarding-badge,
+  .admission-badge {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+
+  .onboarding-description,
+  .admission-description,
+  .success-description {
     font-size: 0.9rem;
   }
 }
