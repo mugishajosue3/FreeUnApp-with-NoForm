@@ -3350,3 +3350,56 @@ section[id] {
 /*--------------------------------------------------------------
 # Hero Pinboard Business Card
 --------------------------------------------------------------*/
+
+/* Registration modal refinements */
+.modal-header {
+  display: flex;
+  flex-direction: column;
+}
+.progress-indicator {
+  gap: 18px;
+}
+.progress-step {
+  min-width: 60px;
+}
+.progress-line {
+  left: 10%;
+  right: 10%;
+}
+
+@media (max-width: 640px) {
+  .step-label {
+    display: none;
+  }
+  .progress-indicator {
+    justify-content: space-around;
+  }
+}
+
+.form-grid {
+  gap: 24px;
+}
+.upload-grid {
+  gap: 24px;
+}
+
+/* Multi-select appearance */
+.input-wrapper select[multiple] {
+  min-height: 110px;
+  padding-right: 15px;
+}
+
+/* Terms checkbox */
+.summary-section .form-group label input[type="checkbox"] {
+  accent-color: var(--accent-color);
+}
+
+/* Inputs placeholder color and subtle shadow */
+.input-wrapper input::placeholder {
+  color: #9aa0a6;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02) inset;
+}

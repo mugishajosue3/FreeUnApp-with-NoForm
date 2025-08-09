@@ -162,61 +162,58 @@
 })();
 
 // Multi-Step Registration Modal Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('registrationModal');
-  const closeBtn = document.getElementById('closeModal');
-  const nextBtn = document.getElementById('nextBtn');
-  const prevBtn = document.getElementById('prevBtn');
-  const submitBtn = document.getElementById('submitBtn');
-  const form = document.getElementById('registrationForm');
-  const steps = document.querySelectorAll('.form-step');
-  const progressSteps = document.querySelectorAll('.progress-step');
-  const progressFill = document.querySelector('.progress-fill');
-  
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("registrationModal");
+  const closeBtn = document.getElementById("closeModal");
+  const nextBtn = document.getElementById("nextBtn");
+  const prevBtn = document.getElementById("prevBtn");
+  const submitBtn = document.getElementById("submitBtn");
+  const form = document.getElementById("registrationForm");
+  const steps = document.querySelectorAll(".form-step");
+  const progressSteps = document.querySelectorAll(".progress-step");
+  const progressFill = document.querySelector(".progress-fill");
+
   let currentStep = 1;
   const totalSteps = steps.length;
 
-  // Open modal from any "Get Started" button
-  document.addEventListener('click', function(e) {
-    if (e.target.matches('.btn-get-started, .btn-buy') || 
-        e.target.closest('.btn-get-started, .btn-buy')) {
+  // Open modal from any "Get Started" or CTA button
+  document.addEventListener("click", function (e) {
+    if (
+      e.target.matches(".btn-get-started, .btn-getstarted, .btn-buy") ||
+      e.target.closest(".btn-get-started, .btn-getstarted, .btn-buy")
+    ) {
       e.preventDefault();
       openModal();
     }
   });
 
-  // Close modal
   function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto";
     resetForm();
   }
 
-  // Open modal
   function openModal() {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
     currentStep = 1;
     updateStepDisplay();
   }
 
-  // Close modal event listeners
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal || e.target.classList.contains('modal-overlay')) {
+  closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal || e.target.classList.contains("modal-overlay")) {
       closeModal();
     }
   });
 
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
       closeModal();
     }
   });
 
-  // Next button functionality
-  nextBtn.addEventListener('click', function() {
+  nextBtn.addEventListener("click", function () {
     if (validateCurrentStep()) {
       if (currentStep < totalSteps) {
         currentStep++;
@@ -225,191 +222,168 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Previous button functionality
-  prevBtn.addEventListener('click', function() {
+  prevBtn.addEventListener("click", function () {
     if (currentStep > 1) {
       currentStep--;
       updateStepDisplay();
     }
   });
 
-  // Submit form
-  submitBtn.addEventListener('click', function(e) {
+  submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
     if (validateCurrentStep()) {
       submitForm();
     }
   });
 
-  // Update step display
   function updateStepDisplay() {
-    // Hide all steps
-    steps.forEach(step => {
-      step.classList.remove('active');
-    });
+    steps.forEach((step) => step.classList.remove("active"));
 
-    // Show current step
-    const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
-    if (currentStepElement) {
-      currentStepElement.classList.add('active');
-    }
+    const currentStepElement = document.querySelector(
+      `.form-step[data-step="${currentStep}"]`
+    );
+    if (currentStepElement) currentStepElement.classList.add("active");
 
-    // Update progress indicator
     updateProgressIndicator();
-
-    // Update navigation buttons
     updateNavigationButtons();
 
-    // Update summary on last step
-    if (currentStep === totalSteps) {
-      updateSummary();
-    }
+    if (currentStep === totalSteps) updateSummary();
   }
 
-  // Update progress indicator
   function updateProgressIndicator() {
     progressSteps.forEach((step, index) => {
       const stepNumber = index + 1;
-      step.classList.remove('active', 'completed');
-      
-      if (stepNumber === currentStep) {
-        step.classList.add('active');
-      } else if (stepNumber < currentStep) {
-        step.classList.add('completed');
-      }
+      step.classList.remove("active", "completed");
+      if (stepNumber === currentStep) step.classList.add("active");
+      else if (stepNumber < currentStep) step.classList.add("completed");
     });
 
-    // Update progress fill
     const progressPercentage = ((currentStep - 1) / (totalSteps - 1)) * 100;
-    progressFill.style.width = progressPercentage + '%';
+    progressFill.style.width = progressPercentage + "%";
   }
 
-  // Update navigation buttons
   function updateNavigationButtons() {
     if (currentStep === 1) {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'flex';
-      submitBtn.style.display = 'none';
+      prevBtn.style.display = "none";
+      nextBtn.style.display = "flex";
+      submitBtn.style.display = "none";
     } else if (currentStep === totalSteps) {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'none';
-      submitBtn.style.display = 'flex';
+      prevBtn.style.display = "flex";
+      nextBtn.style.display = "none";
+      submitBtn.style.display = "flex";
     } else {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'flex';
-      submitBtn.style.display = 'none';
+      prevBtn.style.display = "flex";
+      nextBtn.style.display = "flex";
+      submitBtn.style.display = "none";
     }
   }
 
-  // Validate current step
   function validateCurrentStep() {
-    const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
-    const requiredFields = currentStepElement.querySelectorAll('[required]');
+    const currentStepElement = document.querySelector(
+      `.form-step[data-step="${currentStep}"]`
+    );
+    const requiredFields = currentStepElement.querySelectorAll("[required]");
     let isValid = true;
 
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
+    requiredFields.forEach((field) => {
+      if (!field.value || !String(field.value).trim()) {
         isValid = false;
-        showFieldError(field, 'This field is required');
+        showFieldError(field, "This field is required");
       } else {
         clearFieldError(field);
       }
 
-      // Email validation
-      if (field.type === 'email' && field.value.trim()) {
+      if (field.type === "email" && field.value.trim()) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(field.value)) {
           isValid = false;
-          showFieldError(field, 'Please enter a valid email address');
+          showFieldError(field, "Please enter a valid email address");
         }
       }
 
-      // Phone validation
-      if (field.type === 'tel' && field.value.trim()) {
+      if (field.type === "tel" && field.value.trim()) {
         const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
         if (!phoneRegex.test(field.value)) {
           isValid = false;
-          showFieldError(field, 'Please enter a valid phone number');
+          showFieldError(field, "Please enter a valid phone number");
         }
       }
     });
 
+    // Terms agreement on last step
+    if (currentStep === totalSteps) {
+      const agree = document.getElementById("agreeTerms");
+      if (agree && !agree.checked) {
+        isValid = false;
+        const label = agree.closest("label");
+        if (label) label.style.color = "#dc3545";
+      }
+    }
+
     return isValid;
   }
 
-  // Show field error
   function showFieldError(field, message) {
     clearFieldError(field);
-    
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'field-error';
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "field-error";
     errorDiv.textContent = message;
-    errorDiv.style.color = '#dc3545';
-    errorDiv.style.fontSize = '0.85rem';
-    errorDiv.style.marginTop = '5px';
-    
+    errorDiv.style.color = "#dc3545";
+    errorDiv.style.fontSize = "0.85rem";
+    errorDiv.style.marginTop = "5px";
     field.parentNode.appendChild(errorDiv);
-    field.style.borderColor = '#dc3545';
+    field.style.borderColor = "#dc3545";
   }
 
-  // Clear field error
   function clearFieldError(field) {
-    const existingError = field.parentNode.querySelector('.field-error');
-    if (existingError) {
-      existingError.remove();
-    }
-    field.style.borderColor = '#e9ecef';
+    const existingError = field.parentNode.querySelector(".field-error");
+    if (existingError) existingError.remove();
+    field.style.borderColor = "#e9ecef";
   }
 
-  // Update summary
   function updateSummary() {
-    const name = document.getElementById('fullName').value || '-';
-    const email = document.getElementById('email').value || '-';
-    const phone = document.getElementById('phone').value || '-';
-    const degree = document.getElementById('targetDegree').value || '-';
-
-    document.getElementById('summaryName').textContent = name;
-    document.getElementById('summaryEmail').textContent = email;
-    document.getElementById('summaryPhone').textContent = phone;
-    document.getElementById('summaryDegree').textContent = degree;
+    const get = (id) => document.getElementById(id)?.value || "-";
+    document.getElementById("summaryName").textContent = get("fullName");
+    document.getElementById("summaryEmail").textContent = get("email");
+    document.getElementById("summaryPhone").textContent = get("phone");
+    document.getElementById("summaryDegree").textContent = get("targetDegree");
+    const countries =
+      Array.from(
+        document.getElementById("preferredCountries")?.selectedOptions || []
+      )
+        .map((o) => o.value)
+        .join(", ") || "-";
+    const summaryCountries = document.getElementById("summaryCountries");
+    if (summaryCountries) summaryCountries.textContent = countries;
   }
 
-  // File upload functionality
-  document.querySelectorAll('input[type="file"]').forEach(input => {
-    input.addEventListener('change', function(e) {
+  document.querySelectorAll('input[type="file"]').forEach((input) => {
+    input.addEventListener("change", function (e) {
       const file = e.target.files[0];
-      const uploadArea = this.parentNode.querySelector('.upload-area');
-      
+      const uploadArea = this.parentNode.querySelector(".upload-area");
       if (file) {
-        // Validate file size (5MB limit)
         if (file.size > 5 * 1024 * 1024) {
-          alert('File size must be less than 5MB');
-          this.value = '';
+          alert("File size must be less than 5MB");
+          this.value = "";
           return;
         }
-
-        // Update upload area
         uploadArea.innerHTML = `
           <i class="bi bi-check-circle" style="color: #28a745;"></i>
           <span style="color: #28a745;">${file.name}</span>
           <small>File uploaded successfully</small>
         `;
-        uploadArea.style.borderColor = '#28a745';
-        uploadArea.style.background = 'rgba(40, 167, 69, 0.1)';
+        uploadArea.style.borderColor = "#28a745";
+        uploadArea.style.background = "rgba(40, 167, 69, 0.1)";
       }
     });
   });
 
-  // Submit form
   function submitForm() {
-    // Show loading state
     submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Submitting...';
     submitBtn.disabled = true;
 
-    // Simulate form submission (replace with actual submission logic)
     setTimeout(() => {
-      // Show success message
-      const modalBody = document.querySelector('.modal-body');
+      const modalBody = document.querySelector(".modal-body");
       modalBody.innerHTML = `
         <div class="success-message" style="text-align: center; padding: 60px 40px;">
           <div style="width: 80px; height: 80px; background: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px;">
@@ -419,42 +393,36 @@ document.addEventListener('DOMContentLoaded', function() {
           <p style="color: #6c757d; line-height: 1.6; margin-bottom: 30px;">
             Thank you for submitting your application. We will review your information and get back to you within 24-48 hours with next steps.
           </p>
-          <button onclick="closeModal()" style="background: #023f8a; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer;">
+          <button id="closeSuccess" style="background: #023f8a; color: white; border: none; padding: 12px 30px; border-radius: 25px; font-weight: 600; cursor: pointer;">
             Close
           </button>
         </div>
       `;
-
-      // Hide footer
-      document.querySelector('.modal-footer').style.display = 'none';
-    }, 2000);
+      document.querySelector(".modal-footer").style.display = "none";
+      const closeSuccess = document.getElementById("closeSuccess");
+      if (closeSuccess) closeSuccess.addEventListener("click", closeModal);
+    }, 1200);
   }
 
-  // Reset form
   function resetForm() {
+    if (!form) return;
     form.reset();
     currentStep = 1;
     updateStepDisplay();
-    
-    // Reset file upload areas
-    document.querySelectorAll('.upload-area').forEach(area => {
+    document.querySelectorAll(".upload-area").forEach((area) => {
       area.innerHTML = `
         <i class="bi bi-file-earmark-text"></i>
         <span>Click to upload</span>
         <small>PDF, DOC, DOCX (Max 5MB)</small>
       `;
-      area.style.borderColor = '#023f8a';
-      area.style.background = 'rgba(2, 63, 138, 0.05)';
+      area.style.borderColor = "#023f8a";
+      area.style.background = "rgba(2, 63, 138, 0.05)";
     });
-
-    // Show footer again
-    document.querySelector('.modal-footer').style.display = 'block';
-    
-    // Reset submit button
+    const footer = document.querySelector(".modal-footer");
+    if (footer) footer.style.display = "block";
     submitBtn.innerHTML = 'Submit Application <i class="bi bi-send"></i>';
     submitBtn.disabled = false;
   }
 
-  // Initialize modal
   updateStepDisplay();
 });
