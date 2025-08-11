@@ -89,7 +89,14 @@
   const preloader = document.querySelector("#preloader");
   if (preloader) {
     window.addEventListener("load", () => {
-      preloader.remove();
+      preloader.classList.add("preloader-fade");
+      preloader.addEventListener("transitionend", () => preloader.remove(), {
+        once: true,
+      });
+      // Fallback in case transitionend doesn't fire
+      setTimeout(() => {
+        if (document.body.contains(preloader)) preloader.remove();
+      }, 1200);
     });
   }
 

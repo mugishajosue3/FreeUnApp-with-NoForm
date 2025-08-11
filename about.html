@@ -49,29 +49,33 @@
 
   <body class="about-page">
     <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/FUA LOGO withNoBg.png" alt="FreeUnApp Logo" />
-        <!-- <img src="assets/img/FUA LOGO withNoBg.png" alt="FreeUnApp Logo"> -->
-      </a>
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/FUA LOGO withNoBg.png" alt="FreeUnApp Logo" />
+          <!-- <img src="assets/img/FUA LOGO withNoBg.png" alt="FreeUnApp Logo"> -->
+        </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-            <li><a href="index.html" class="active home-link" >Home <br /> </a> </li>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li>
+              <a href="index.html" class="active home-link">Home <br /> </a>
+            </li>
             <li><a href="about.html">About</a></li>
             <li><a href="index.html#services">Services</a></li>
             <li><a href="index.html#team">Team</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <img src="./assets/img/FUA LOGO withNoBg.png" alt="">
+            <img src="./assets/img/FUA LOGO withNoBg.png" alt="" />
           </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-      <a class="btn-getstarted" href="#services">Get Started</a>
-    </div>
-  </header>
+        <a class="btn-getstarted" href="#services">Get Started</a>
+      </div>
+    </header>
 
     <main class="main">
       <!-- Page Title -->
@@ -245,7 +249,7 @@
       <!-- /Why Us Section -->
 
       <!-- Counts Section -->
-      <section id="counts" class="section counts light-background">
+      <!-- <section id="counts" class="section counts light-background">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
           <div class="row gy-4">
             <div class="col-lg-3 col-md-6">
@@ -259,7 +263,7 @@
                 <p>Students</p>
               </div>
             </div>
-            <!-- End Stats Item -->
+            End Stats Item
 
             <div class="col-lg-3 col-md-6">
               <div class="stats-item text-center w-100 h-100">
@@ -272,7 +276,7 @@
                 <p>Admitted</p>
               </div>
             </div>
-            <!-- End Stats Item -->
+            End Stats Item
 
             <div class="col-lg-3 col-md-6">
               <div class="stats-item text-center w-100 h-100">
@@ -285,7 +289,7 @@
                 <p>Got scholarships</p>
               </div>
             </div>
-            <!-- End Stats Item -->
+            End Stats Item
 
             <div class="col-lg-3 col-md-6">
               <div class="stats-item text-center w-100 h-100">
@@ -298,10 +302,10 @@
                 <p>Trainers</p>
               </div>
             </div>
-            <!-- End Stats Item -->
+            End Stats Item
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /Counts Section -->
 
       <!-- Testimonials Section -->
@@ -345,7 +349,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img
-                      src="assets/img/testimonials/testimonials-1b.jpg"
+                      src="assets/img/testimonials/icon.jpg"
                       class="testimonial-img"
                       alt="Marie Uwimana"
                     />
@@ -379,7 +383,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img
-                      src="assets/img/testimonials/testimonials-2.jpg"
+                      src="assets/img/testimonials/icon.jpg"
                       class="testimonial-img"
                       alt="Jean Pierre Ndayisaba"
                     />
@@ -412,7 +416,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img
-                      src="assets/img/testimonials/testimonials-3.jpg"
+                      src="assets/img/testimonials/icon.jpg"
                       class="testimonial-img"
                       alt="Grace Mutoni"
                     />
@@ -445,7 +449,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img
-                      src="assets/img/testimonials/testimonials-4.jpg"
+                      src="assets/img/testimonials/icon.jpg"
                       class="testimonial-img"
                       alt="Eric Niyonsenga"
                     />
@@ -478,7 +482,7 @@
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img
-                      src="assets/img/testimonials/testimonials-5.jpg"
+                      src="assets/img/testimonials/icon.jpg"
                       class="testimonial-img"
                       alt="Sarah Uwase"
                     />
@@ -610,7 +614,14 @@
     ></a>
 
     <!-- Preloader -->
-    <div id="preloader"></div>
+    <div id="preloader" aria-hidden="true">
+      <div class="preloader-inner">
+        <div class="preloader-logo">
+          <img src="assets/img/FUA LOGO withNoBg.png" alt="FreeUnApp" />
+        </div>
+        <div class="preloader-spinner" aria-label="Loading"></div>
+      </div>
+    </div>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
