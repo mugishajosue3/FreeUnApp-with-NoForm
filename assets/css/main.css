@@ -2848,3 +2848,215 @@ section[id] {
     font-size: 1.15rem;
   }
 }
+
+/*--------------------------------------------------------------
+# Custom Sections (Stats, Welcome, Destinations)
+--------------------------------------------------------------*/
+.stats-strip {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.stats-strip .stat-item {
+  background: var(--surface-color);
+  border-radius: 14px;
+  padding: 20px 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.stats-strip .stat-item i {
+  font-size: 28px;
+  color: var(--accent-color);
+}
+.stats-strip .stat-number {
+  font-weight: 800;
+  font-size: 24px;
+  margin-top: 6px;
+}
+.stats-strip .stat-label {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  font-size: 14px;
+}
+.stats-strip .stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-section .welcome-title {
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.welcome-section .welcome-text {
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  margin-bottom: 18px;
+}
+.btn-rounded {
+  border-radius: 999px;
+  padding: 10px 18px;
+}
+
+.destinations-section .destination-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 62%; /* 16:10-ish ratio */
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(90%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.destinations-section .destination-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  transition: opacity 0.3s ease;
+}
+.destinations-section .destination-label {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  letter-spacing: 2px;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+.destinations-section .destination-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  filter: saturate(110%);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+}
+.destinations-section .destination-card:hover::after {
+  opacity: 0.85;
+}
+
+/*--------------------------------------------------------------
+# News Section
+--------------------------------------------------------------*/
+.news-section .news-card {
+  background: var(--surface-color);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.news-section .news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
+}
+.news-section .news-thumb {
+  width: 100%;
+  padding-top: 56.5%;
+  background-size: cover;
+  background-position: center;
+}
+.news-section .news-body {
+  padding: 16px 16px 20px;
+}
+.news-section .news-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.news-section .news-excerpt {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  margin: 0;
+}
+
+/* News Modal */
+#newsModal .modal-body {
+  max-height: 70vh;
+  overflow: auto;
+}
+.news-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 16px;
+}
+@media (min-width: 576px) {
+  .news-modal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .news-modal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+#newsModal .news-card {
+  height: auto;
+}
+
+/*--------------------------------------------------------------
+# Promo Banner
+--------------------------------------------------------------*/
+.banner-section .banner-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.banner-section .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section (Swiper)
+--------------------------------------------------------------*/
+.testimonials-section .testimonial-card {
+  position: relative;
+  background: var(--surface-color);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  padding: 20px 18px 22px;
+  text-align: center;
+  height: 100%;
+}
+.testimonials-section .testimonial-quote {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  font-size: 28px;
+  font-weight: 800;
+}
+.testimonials-section .testimonial-avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 6px auto 10px;
+  border: 4px solid var(--background-color);
+}
+.testimonials-section .testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.testimonials-section .testimonial-name {
+  margin: 6px 0 0;
+  font-weight: 700;
+}
+.testimonials-section .testimonial-country {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+.testimonials-section .testimonial-stars {
+  color: #f7b500;
+  margin: 6px 0 10px;
+}
+.testimonials-section .testimonial-text {
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  font-style: italic;
+}
