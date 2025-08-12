@@ -118,5 +118,5 @@ Credits & License
 - Customizations: FreeUnApp team (branding, preloader, content, styling, structure)
 
 Support & Contact
-- General inquiries: info@freeunapp.rw
+- General inquiries: info@freeunapp.org
 - Website issues/requests: open a ticket in your project tracker or contact the web maintainer.
