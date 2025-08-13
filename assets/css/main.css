@@ -264,6 +264,32 @@ h6 {
   transition: 0.3s;
 }
 
+.bg-rigt {
+  background-color: #023f8a18;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  padding: 20px;
+  margin-left: 0;
+  position: relative;
+  left: 0;
+  width: calc(
+    50% + (100vw - 1200px) / 2
+  ); /* Adjust 1200px to your container width */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* keeps container centered */
+}
+
+.bg-rigt-wrapper {
+  display: flex;
+}
+
+.bg-rigt {
+  width: calc(100% - (100vw - var(--container-width)) / 2);
+}
+
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
@@ -404,6 +430,9 @@ h6 {
 
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
+  #service-description {
+    padding: 0vh 4vh !important;
+  }
   .home-link {
     margin-top: 25px;
   }
@@ -777,11 +806,41 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
+.chatbot-link .chatbot {
+  position: fixed;
+  /* visibility: hidden; */
+  /* opacity: 0; */
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  width: 150px !important;
+  height: 150px !important;
+  transition: all 0.4s;
+}
+
+.chatbot-link .chatbot:hover {
+  width: 250px;
+  height: 250px;
+  animation: zoomPulse 1s ease-in-out infinite;
+}
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .scroll-top {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
+  left: 15px;
   bottom: -15px;
   z-index: 99999;
   background-color: var(--accent-color);
@@ -3003,8 +3062,8 @@ section[id] {
 .banner-section .banner-img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  /* border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); */
 }
 .banner-section .container {
   padding-top: 10px;
@@ -3069,8 +3128,25 @@ section[id] {
 
 /* Countries nav strip */
 .countries-strip {
-  background: #023f8aa2;
+  background-image: url(/assets/img/bg.png);
 }
+
+.countries-container {
+  position: relative; /* so the image can be absolutely positioned */
+}
+
+.gradua-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0; /* stretch vertically */
+  height: 100%; /* auto-resize height */
+  width: auto; /* keep aspect ratio */
+  object-fit: contain;
+  padding: 0; /* ignore container padding */
+  margin: 0;
+}
+
 .countries-strip .countries-list {
   display: flex;
   gap: 22px;
@@ -3079,6 +3155,15 @@ section[id] {
   margin: 0;
   list-style: none;
 }
+
+.countries-container .countries-list li {
+  border-bottom: 1px solid #ffffff;
+}
+
+.countries-container .countries-list li:hover {
+  border-bottom: none;
+}
+
 .countries-strip .countries-list a {
   color: #fff;
   opacity: 0.95;
@@ -3089,10 +3174,11 @@ section[id] {
 }
 .countries-strip .countries-list a:hover {
   opacity: 1;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .countries-strip .container {
   border-top: 2px solid rgba(255, 255, 255, 0.35);
+  border-top: 2px solid #ffffff0e;
   margin-top: -2px;
 }
 
@@ -3174,4 +3260,23 @@ section[id] {
   background: var(--accent-color);
   color: #fff;
   border-color: var(--accent-color);
+}
+
+/* Chatbot floating link */
+.chatbot-link {
+  position: fixed;
+  right: 18px;
+  bottom: 84px;
+  z-index: 998;
+  display: inline-block;
+}
+.chatbot-link .chatbot {
+  width: 70px;
+  height: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.25));
+  transition: transform 0.2s ease;
+}
+.chatbot-link:hover .chatbot {
+  transform: translateY(-3px) scale(1.02);
 }
