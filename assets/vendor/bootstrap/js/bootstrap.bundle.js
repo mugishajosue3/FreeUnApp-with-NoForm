@@ -1935,10 +1935,7 @@
         do {
           if (next && parent.isSameNode(next)) {
             return true;
-          } // $FlowFixMe[prop-missing]: need a better way to handle this...
-
-
-          next = next.parentNode || next.host;
+          } // $FlowFixMe[prop-missing]: need a better way to handle this...next = next.parentNode || next.host;
         } while (next);
       } // Give up, the result is false
 
@@ -3364,10 +3361,7 @@
 
           if (!areValidElements(reference, popper)) {
             return;
-          } // Store the reference and popper rects to be read by modifiers
-
-
-          state.rects = {
+          } // Store the reference and popper rects to be read by modifiersstate.rects = {
             reference: getCompositeRect(reference, getOffsetParent(popper), state.options.strategy === 'fixed'),
             popper: getLayoutRect(popper)
           }; // Modifiers have the ability to reset the current update cycle. The
