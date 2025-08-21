@@ -3280,3 +3280,20 @@ section[id] {
 .chatbot-link:hover .chatbot {
   transform: translateY(-3px) scale(1.02);
 }
+
+/* Scholarships external text link style */
+.navmenu a.scholarship-link {
+  font-weight: 700;
+  color: var(--accent-color);
+  position: relative;
+}
+.navmenu a.scholarship-link::after {
+  content: " \00BB"; /* » */
+  font-weight: 700;
+}
+.navmenu a.scholarship-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 1199px) {
+  .navmenu a.scholarship-link { margin-top: 6px; display: inline-block; }
+}
